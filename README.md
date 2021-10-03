@@ -39,6 +39,8 @@ use some other code host for this such as [notabug](https://notabug.org/),
 [gitlab](https://gitlab.com/), or [bitbucket](https://bitbucket.org/) 
 and be sure that your repo is private.
 
+run your tests with "rake cucumber:all" in the cli
+
 **Part 1: Create a declarative scenario step for adding movies**
 
 The goal of BDD is to express behavioral tasks rather than low-level operations.  
