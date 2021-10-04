@@ -19,7 +19,22 @@ end
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  ensure that that e1 occurs before e2.
   #  page.body is the entire content of the page as a string.
-  fail "Unimplemented"
+  index = 0
+  ind1 = 0
+  ind2 = 0
+  page.all('tbody tr').each do |tr|
+    index = index + 1
+    if(tr.has_content?(e1))
+      ind1 = index
+    end
+    if(tr.has_content?(e2))
+      ind2 = index
+    end
+    #puts(tr.inspect)
+  end
+  #puts(ind1)
+  #puts(ind2)
+  expect(ind1).to be < ind2
 end
 
 # Make it easier to express checking or unchecking several boxes at once
